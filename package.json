@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.10.4",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "antd": "^5.17.0",
     "axios": "^1.6.8",
+    "graphql": "^16.8.1",
     "next": "12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
