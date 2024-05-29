@@ -29,7 +29,7 @@ export default function StaticRoutingMovedPage() {
     });
   };
   return (
-    <dev>
+    <div>
       {data?.fetchBoards.map((el) => (
         <div key={el.number}>
           {/*map으로 작성시 key를 설정 해놔야지 각각만들어진 div가 고유해진다. */}
@@ -46,6 +46,6 @@ export default function StaticRoutingMovedPage() {
           </span>
         </div>
       ))}
-    </dev>
+    </div>
   );
 }
