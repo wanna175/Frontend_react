@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <title>this의 이해</title>
+    <script>
+      class ClassCounterPage {
+        count = 10;
+        onClickCountUp = () => {
+          console.log("현재 카운트: " + this.count);
+        }; //화살표함수로 바꾸면 this bind가 필요없어진다.
+
+        render() {
+          const button = document.createElement("button");
+          button.innerText("카운트 올리기!");
+          button.addEventListener("click", this.onClickCountUp);
+          //button.addEventListener("click",this.onClickCountUp.bind(this));
+          document.body.appendChild(button);
+        }
+      }
+      window.onload = () => {
+        const counter = new ClassCounterPage();
+        counter.render();
+        //요상태에서 실행하면 this.count가 undefined가 나올 것이다.
+        //실행후 button이 주체가 되면 this.count가 버튼 클래스에도 있기 때문이다.
+        //따라서 bind로 this를 잘 연결시켜줘야한다.
+        //이것이 너무 불편하기 때문에 화살표함수로 쓰면 눈에 보이는 것이 실행되기에
+      };
+    </script>
+  </body>
+</html>
